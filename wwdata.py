@@ -1,5 +1,5 @@
 # --------FOR START THAT CODE PRINT "bokeh serve --show wwdata.py" IN TERMINAL-----------
-# Also to start code u need print stock name in string 95 "symbol = ''  "
+# Also to start code u need print stock name in str 95 "symbol = ''  "
 
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import os
