@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding:utf-8 -*-
+# --------FOR START THAT CODE PRINT "bokeh serve --show wwdata.py" IN TERMINAL-----------
+# Also to start code u need print stock name in string 95 "symbol = ''  "
 
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import os
@@ -12,9 +12,14 @@ from bokeh.models import BooleanFilter, CDSView, Select, Range1d, HoverTool
 from bokeh.palettes import Category20
 from bokeh.models.formatters import NumeralTickFormatter
 
+import pyautogui
+
+
+W_Sreen, H_Screen = pyautogui.size()
+
 # Define constants
-W_PLOT = 1500
-H_PLOT = 600
+W_PLOT = W_Sreen // 2
+H_PLOT = H_Screen // 3
 TOOLS = 'pan,wheel_zoom,hover,reset'
 
 VBAR_WIDTH = 0.2
@@ -87,7 +92,7 @@ def plot_stock_price (stock):
 
 stock = ColumnDataSource (
     data=dict (Date=[], Open=[], Close=[], High=[], Low=[], index=[]))
-symbol = 'msft'
+symbol = 'aflt'     #<-------stock name here
 df = get_symbol_df (symbol)
 stock.data = stock.from_df (df)
 elements = list ()

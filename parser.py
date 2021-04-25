@@ -1,19 +1,18 @@
 import yfinance as yf
-import matplotlib.pyplot as plt
-import seaborn
 
-msft = yf.Ticker("MSFT")
+
+aflt = yf.Ticker("aflt.me")
 
 # get stock info
-print(msft.info)
+print(aflt.info)
 
 # get historical market data
-hist = msft.history(period="5d")
+hist = aflt.history(period="5d")
 
 hist['Close'].plot(figsize=(16, 9))
 
-data_df = yf.download("MSFT", start="2021-03-01", end="2021-04-30")
-data_df.to_csv('MSFT.csv')
+data_df = yf.download("aflt.me", start="2021-03-01", end="2021-04-24")
+data_df.to_csv('aflt.csv')
 
-msft.history(period="1y")
-msft.actions
+aflt.history(period="1y")
+aflt.actions
